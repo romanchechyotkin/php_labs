@@ -1,4 +1,15 @@
 <?php
+
+namespace User;
+
+class Validator {
+    public function isString($input) {
+        return is_string($input);
+    }
+}
+
+namespace GlobalNamespace;
+
 trait UppercaseText {
     public function toUpperCase($text) {
         return strtoupper($text);
@@ -16,16 +27,6 @@ trait PositiveNumberCheck {
         return is_numeric($number) && $number > 0;
     }
 }
-
-namespace User;
-
-class Validator {
-    public function isString($input) {
-        return is_string($input);
-    }
-}
-
-namespace;
 
 trait FileHandler {
     public function writeToFile($filename, $data) {
@@ -63,3 +64,4 @@ echo "Текущая дата: " . $util->formatCurrentDate() . "<br>";
 $userValidator = new \User\Validator();
 echo "Строка 'Hello' является строкой? " . ($userValidator->isString("Hello") ? "Да" : "Нет") . "<br>";
 ?>
+
