@@ -24,6 +24,10 @@ class BookCollection implements Iterator {
         $this->books[] = $book;
     }
 
+    public function getBooks(): array {
+        return $this->books;
+    }
+
     public function current(): mixed {
         return $this->books[$this->index];
     }
@@ -44,9 +48,7 @@ class BookCollection implements Iterator {
         return isset($this->books[$this->index]);
     }
 
-    public function getBooks(): array {
-        return $this->books;
-    }
+
 }
 
 if (!isset($_SESSION['book_collection'])) {
